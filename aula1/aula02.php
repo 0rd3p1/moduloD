@@ -31,7 +31,7 @@ while ($op != 0) {
 
     switch ($op) {
         case 0:
-            echo "Obrigado por usar a calculadora dos bizzonhos!!";
+            echo "\nObrigado por usar a calculadora dos bizzonhos!!";
             break;
         
         case 1:
