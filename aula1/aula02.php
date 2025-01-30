@@ -1,6 +1,7 @@
 <?php
 
-/*
+// Primeiro Exec
+
 $num1 = 1;
 $num2 = 2;
 
@@ -11,7 +12,8 @@ if ($num2 % 2 == 1) {
 } else {
     echo "é par";
 }
-*/
+
+// Segundo Exec
 
 $op = 1;
 
