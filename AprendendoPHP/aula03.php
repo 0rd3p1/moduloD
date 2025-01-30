@@ -61,6 +61,6 @@ for ($i = 0; $i < 10; $i++) {
     $mul[] = $num[$i] * $nums[$i];
 }
 
-var_dump($mul);
+//var_dump($mul);
 
 ?>
