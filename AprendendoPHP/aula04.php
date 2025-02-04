@@ -2,60 +2,39 @@
 
 // Primeiro Exec 
 //
- 
-
-
-//                           FALTA MOSTRAR O ESTUDANTE COM A MELHOR NOTA
-
-
 
 $alunos = [
     'Aluno' => ["Pedro", "Wally", "Eduardo", "Julio", "Carlos", "Lukas", "Lorenzo", "Joao", "Rodrigo", "Caio"],
-    'Nota' => [10, 10, 10, 0, 10, 10, 10, 10, 10, 10]
+    'Nota' => [10, 6, 9, 0, 8, 9, 8, 8, 8, 9]
 ];
-/*
-$alunos = [
-    'Pedro' => [10],
-    'Joao' => [10],
-    'Julio' => [0],
-    'Caio' => [10],
-    'Rodrigo' => [10],
-    'Lorenzo' => [10],
-    'Eduardo' => [10],
-    'Carlos' => [10],
-    'Wallys' => [10],
-    'Lukas' => [10]
-];
-*/
-$c = 1;
+
+$c = 0;
 $not = 0;
 
-foreach ($alunos['Nota'] as $a) {
-    $not += $a;
+for ($i = 0; $i < 10; $i++) {
+    $not += $alunos['Nota'][$i];
     $c++;
 }
 
 $ma;
 
-for ($i = 0; $i < count($alunos) - 1; $i++) {
-    for ($j = 0; $j < count($alunos) - 1; $j++) {
-        if ($alunos[$j] > $alunos[$j + 1]) {
-            $temp = $alunos[$j];
-            $alunos[$j] = $alunos[$j + 1];
-            $alunos[$j + 1] = $temp;
+
+
+for ($i = 0; $i < 10; $i++) {
+    for ($j = 0; $j < 10; $j++) {
+        if ($alunos['Nota'][$i] < $alunos['Nota'][$j]) {
+            $ma = $j;
         }
     }
 }
 
-var_dump($alunos);
-exit;
-
 $med = $not / $c;
 
-//echo "A média das notas é $med";
+//echo "A média das notas é $med\n" . "A melhor nota foi do aluno " . $alunos['Aluno'][$ma] . " com a nota " . $alunos['Nota'][$ma];
 
 // Segundo Exec
 //
+
 $nums = [-1, -2, 3, 4, 5, 6, 7, -8, 9, 10];
 $neg = 0;
 $pos = 0;
@@ -80,20 +59,25 @@ for ($i = 0; $i < 10; $i++) {
 
 // Terceiro Exec
 //
-//echo "Digite um numero: ";
 
-//$num = readline();
+/*
+echo "Digite um numero: ";
+
+$num = readline();
 
 for ($i = 0; $i < 10; $i++) {
-    //echo "\nMultiplicado pelo numero " . $nums[$i] . " resulta em " . $nums[$i] * $num . "\n";
+    echo "\nMultiplicado pelo numero " . $nums[$i] . " resulta em " . $nums[$i] * $num . "\n";
 }
+*/
 
 // Quarto Exec
 //
+
 $vet1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 $vet2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 $cont1 = 1;
+
 /*
 for ($i = 0; $i < 10; $i++) {
     echo "Digite o " . $cont1 . "° numero para o primeiro vetor: ";
@@ -116,5 +100,42 @@ for ($i = 0; $i < 10; $i++) {
     $cont3++;
 }
 */
+
+// Quinto Exc
+//
+
+$mes = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agorsto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+
+/*
+echo "Escolha um mes pelo seu numero correspondente: ";
+
+$o = readline();
+$o -= 1;
+
+if ($o <= 11 && $o >= 0) {
+    echo "\nO mes escolhido foi " . $mes[$o];
+}
+*/
+
+// Sexto Exec
+//
+
+$nu = [1, 3, 2, 4, 5, 8, 7, 10, 9];
+
+for ($i = 0; $i < count($nu) - 1; $i++) {
+    for ($j = 0; $j < count($nu) - 1; $j++) {
+        if ($nu[$j] < $nu[$j + 1]) {
+            $temp = $nu[$j];
+            $nu[$j] = $nu[$j + 1];
+            $nu[$j + 1] = $temp;
+        }
+    }
+}
+
+//var_dump($nu);
+
+// Setimo Exec
+//
+
 
 ?>
