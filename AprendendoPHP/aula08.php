@@ -7,6 +7,13 @@ class User {
     public $senha;
     public $email;
 
+    public function __construct ($id, $nome, $senha, $email) {
+        $this -> id = $id;
+        $this -> nome = $nome;
+        $this -> senha = $senha;
+        $this -> email = $email;
+    }
+
     public function add ($nome, $senha, $email, $users, $cont) {
 
         $u = new User();
