@@ -50,16 +50,8 @@ while ($op != 6) {
             echo "\nInforme o email do usuario que deseja alterar: ";
             $e = readline();
 
-            echo "\n\nDigite o novo nome: ";
-            $n = readline();
-
-            echo "\n\nDigite a nova senha: ";
-            $s = readline();
-
-            echo "\n\nDigite o novo email: ";
-            $e = readline();
-
             $users = $u -> alt($n, $s, $e, $users);
+            break;
 
         case 4:
             echo "\nInforme o email do usuario que deseja buscar: ";
