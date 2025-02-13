@@ -75,6 +75,7 @@ class User {
 
     public function getByEmail ($e, $users): array {
         for ($i = 0; $i < count($users); $i++) {
+            // '$users[$i]' representa a posição no array e o '-> email' a posição do objeto
             if ($e == $users[$i] -> email) {
                 echo "\n--------------------------------- \n";
                 echo "ID: " . $users[$i] -> id . "\n";
