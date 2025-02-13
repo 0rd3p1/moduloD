@@ -12,8 +12,8 @@ while ($op != 6) {
     echo "\n\tBem vindo ao Bizzonhos solucoes\n";
     echo "\nEscolha uma opção abaixo";
     echo "\n1 - Cadastrar";
-    echo "\n2 - Excluir";
-    echo "\n3 - Alterar";
+    echo "\n2 - Excluir Usuario";
+    echo "\n3 - Alterar Cadastro";
     echo "\n4 - Buscar por Email";
     echo "\n5 - Mostrar Todos";
     echo "\n6 - Sair";
