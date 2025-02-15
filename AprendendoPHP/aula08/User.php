@@ -1,8 +1,6 @@
 <?php
 
-class User
-{
-
+class User {
     public int $id;
     public $nome;
     public $senha;
@@ -17,8 +15,7 @@ class User
     }
     */
 
-    public function add($n, $s, $e, $c, $users): array
-    {
+    public function add($n, $s, $e, $c, $users): array {
         if (!$this->authEmail($e, $users)) {
             echo "\tEmail ja cadastrado\t";
             return $users;
@@ -36,8 +33,7 @@ class User
         return $users;
     }
 
-    public function authEmail($e, $users)
-    {
+    public function authEmail($e, $users) {
         foreach ($users as $u) {
             if ($u->email == $e) {
                 return false;
@@ -46,8 +42,7 @@ class User
         return true;
     }
 
-    public function del($e, $users): array
-    {
+    public function del($e, $users): array {
         for ($i = 0; $i < count($users); $i++) {
             if ($e == $users[$i]->email) {
                 unset($users[$i]);
@@ -61,8 +56,7 @@ class User
         return $users;
     }
 
-    public function alt($n, $s, $e, $users): array
-    {
+    public function alt($n, $s, $e, $users): array {
         for ($i = 0; $i < count($users); $i++) {
             if ($e == $users[$i]->email) {
                 $o = null;
@@ -107,8 +101,7 @@ class User
         return $users;
     }
 
-    public function getByEmail($e, $users): array
-    {
+    public function getByEmail($e, $users): array {
         for ($i = 0; $i < count($users); $i++) {
             // '$users[$i]' representa a posição no array e o '-> email' a posição dentro  do objeto
             if ($e == $users[$i]->email) {
@@ -126,8 +119,7 @@ class User
         return $users;
     }
 
-    public function getAll($users): void
-    {
+    public function getAll($users): void {
         foreach ($users as $u) {
             echo "\n--------------------------------- \n";
             echo "ID: " . $u->id . "\n";
@@ -138,3 +130,5 @@ class User
         }
     }
 }
+
+?>
