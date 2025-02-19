@@ -21,6 +21,7 @@ class User {
 
     public function add($n, $s, $e) {
         if ($this -> authEmail($e)) {
+            echo "\n\tEmail ja cadastrado!\n";
             return null;
         }
 
@@ -38,7 +39,6 @@ class User {
             return false;
         }
         
-        echo "\n\tEmail ja cadastrado!\n";
         return true;
     }
 
@@ -54,107 +54,82 @@ class User {
         echo "\n\tUsuario Excluido!\n";
     }
 
-    public function alt($n, $s, $e, $users): array {
-        for ($i = 0; $i < count($users); $i++) {
-            if ($e == $users[$i]->email) {
+    public function alt($e) {
+        if ($this -> authEmail($e)) {
+            $o = null;
+            $email = $e;
+
+            echo "\nDeseja alterar o nome do usuario?(S/N): ";
+            $o = readline();
+            strtolower($o);
+            if ($o == "s") {
+                echo "\nDigite o novo nome: ";
+                $n = readline();
+                $query = $this -> db() -> prepare("UPDATE user SET nome = :n WHERE email = :e");
+                $query -> execute(['e' => $e, 'n' => $n]);
                 $o = null;
-
-                echo "\nDeseja alterar o nome do usuario?(S/N) ";
-                $o = readline();
-                strtolower($o);
-                if ($o == "s") {
-                    echo "\nDigite o novo nome: ";
-                    $n = readline();
-                    $users[$i]->nome = $n;
-                    $o = null;
-                }
-
-                echo "\nDeseja alterar a senha do usuario?(S/N) ";
-                $o = readline();
-                strtolower($o);
-                if ($o == "s") {
-                    echo "\nDigite a nova senha: ";
-                    $s = readline();
-                    $users[$i]->senha = $s;
-                    $o = null;
-                }
-
-                echo "\nDeseja alterar o email do usuario?(S/N) ";
-                $o = readline();
-                strtolower($o);
-                if ($o == "s") {
-                    echo "\nDigite o novo nome: ";
-                    $e = readline();
-                    $users[$i]->email = $e;
-                    $o = null;
-                }
-                
-                $i = count($users);
-                echo "\n\tUsuario alterado!\n";
-                return $users;
             }
+
+            echo "\nDeseja alterar a senha do usuario?(S/N): ";
+            $o = readline();
+            strtolower($o);
+            if ($o == "s") {
+                echo "\nDigite a nova senha: ";
+                $s = readline();
+                $query = $this -> db() -> prepare("UPDATE user SET senha = :s WHERE email = :e");
+                $query -> execute(['e' => $e, 's' => $s]);
+                $o = null;
+            }
+
+            echo "\nDeseja alterar o email do usuario?(S/N): ";
+            $o = readline();
+            strtolower($o);
+            if ($o == "s") {
+                echo "\nDigite o novo nome: ";
+                $e = readline();
+                $query = $this -> db() -> prepare("UPDATE user SET email = :e WHERE email = :email");
+                $query -> execute(['e' => $e, 'email' => $email]);
+                $o = null;
+            }
+            
+            echo "\n\tUsuario alterado!\n";
+            return null;
         }
 
         echo "\n\tUsuario nao encontrado!!\n";
-        return $users;
     }
 
-    public function getByEmail($e, $users): array {
-        for ($i = 0; $i < count($users); $i++) {
-            // '$users[$i]' representa a posição no array e o '-> email' a posição dentro  do objeto
-            if ($e == $users[$i]->email) {
-                echo "\n--------------------------------- \n";
-                echo "ID: " . $users[$i]->id . "\n";
-                echo "Nome: " . $users[$i]->nome . "\n";
-                echo "Email: " . $users[$i]->email . "\n";
-                echo "Senha: " . $users[$i]->senha . "\n";
-                echo "---------------------------------\n\n";
-                return $users;
-            }
+    public function getByEmail($e) {
+        $query = $this -> db() -> prepare("SELECT * FROM user WHERE email = :e");
+        $query -> execute(['e' => $e]);
+        
+        if ($u = $query -> fetch()) {
+            echo "\n---------------------------------\n";
+            echo "ID: " . $u['id'] . "\n";
+            echo "Nome: " . $u['nome'] . "\n";
+            echo "Email: " . $u['email'] . "\n";
+            echo "Senha: " . $u['senha'] . "\n";
+            echo "---------------------------------\n\n";
+            return null;
         }
 
         echo "\n\tUsuario nao encontrado!\n";
-        return $users;
     }
 
-    public function getAll($users): void {
-        foreach ($users as $u) {
-            echo "\n--------------------------------- \n";
-            echo "ID: " . $u->id . "\n";
-            echo "Nome: " . $u->nome . "\n";
-            echo "Email: " . $u->email . "\n";
-            echo "Senha: " . $u->senha . "\n";
-            echo "---------------------------------\n\n";
+    public function getAll() {
+        $query = $this -> db() -> prepare("SELECT * FROM user");
+        $query -> execute();
+
+
+        foreach ($query -> fetchAll() as $u) {
+            echo "\n---------------------------------\n";
+            echo "ID: " . $u['id'] . "\n";
+            echo "Nome: " . $u['nome'] . "\n";
+            echo "Email: " . $u['email'] . "\n";
+            echo "Senha: " . $u['senha'] . "\n";
+            echo "---------------------------------\n";
         }
     }
 }
 
 ?>
-
-$db = new PDO('sqlite:database.sqlite');
-
-$query = $db->prepare("select * from usuario where id = :id");
-$query->execute(['id' => 3]);
-$usuario = $query->fetch();
-
-
-echo "<pre>";
-var_dump($usuario);
-echo "</pre>";
-
-
-$q = $db->prepare("insert into usuarios(nome, email, senha) values (:nome, :email, :senha)");
-
-$users = $q->execute([
-    'nome' => 'Leonardo',
-    'email' => 'leonardo@leo.com.br',
-    'senha' => '123456'
-]);
-
-
-$query = $db->query("select * from usuarios");
-$usuarios = $query->fetchAll();
-
-echo '<pre>';
-var_dump($usuarios);
-echo '</pre>';

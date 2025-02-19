@@ -43,18 +43,18 @@ while ($op != 6) {
             echo "\nInforme o email do usuario que deseja alterar: ";
             $e = readline();
 
-            $u -> alt($n, $s, $e, $users);
+            $u -> alt($e);
             break;
 
         case 4:
             echo "\nInforme o email do usuario que deseja buscar: ";
             $e = readline();
             
-            $users = $u -> getByEmail($e, $users);
+            $u -> getByEmail($e);
             break;
         
         case 5:
-            $u -> getAll($users);
+            $u -> getAll();
             break;
 
         case 6:
