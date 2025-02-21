@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap');
+
+* {
+    color: whitesmoke;
+    font-family: "JetBrains Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: dimgray;
+}
+
+h1 {
+    font-size: 4.0rem;
+    font-family: "Grechen Fuemen", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    padding: 10%;
+}
+
+p {
+    font-size: 2.0rem;
+}
+
+a {
+    font-size: 1.7rem;
+    text-decoration: none;
+}
+
+.login {
+    padding: 400px;
+}
+
+.search {
+    padding: 400px;
+}
+
+.welcome {
+    padding: 22%;
+}
