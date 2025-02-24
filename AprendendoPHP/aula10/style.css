@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap');
 
+/*Declaracao de variavel no CSS*/
+:root {
+    --cor-fundo: dimgray; 
+}
+
 * {
     color: whitesmoke;
     font-family: "JetBrains Mono", serif;
@@ -13,7 +18,7 @@
 }
 
 body {
-    background-color: dimgray;
+    background-color: var(--cor-fundo);
 }
 
 h1 {
@@ -24,11 +29,22 @@ h1 {
 }
 
 h2 {
-    padding: 10%;
+    font-size: 3.0rem;
+    margin-top: 5%;
+}
+
+h3 {
+    font-size: 2.0rem;
+    margin-bottom: 2.5%;
+}
+
+img {
+    margin-top: 50px;
+    width: 50rem;
 }
 
 p {
-    font-size: 2.0rem;
+    font-size: 1.5rem;
 }
 
 a {
@@ -46,4 +62,19 @@ a {
 
 .welcome {
     padding: 22%;
+}
+
+.about {
+    margin-top: 12%;
+    margin-bottom: 5%;
+    font-size: 5.0rem;
+}
+.aboutTxt {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 15%;
+}
+
+.cnpj {
+    margin-top: 5%;
 }
