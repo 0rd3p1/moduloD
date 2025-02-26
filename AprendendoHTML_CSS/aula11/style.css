@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap');
+
+/*Declaracao de variavel no CSS*/
+:root {
+    --cor-cinza-fundo: dimgray; 
+    --cor-preto-fundo: black;
+}
+
+/*
+'width' = largura
+'height' = altura
+*/
+
+* {
+    color: whitesmoke;
+    font-family: "JetBrains Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    background-color: var(--cor-preto-fundo);
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+header div {
+    display: flex;
+    font-size: 2.0rem;
+    padding: 10px;
+    align-items: end;
+    gap: 50px;
+}
+
+body {
+    background-color: var(--cor-cinza-fundo);
+}
+
+footer {
+    display: flex;
+    background-color: var(--cor-preto-fundo);
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 5%;
+    
+}
+
+section {
+    margin: 3%;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px;
+}
+
+article p {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+article img {
+    width: 45rem;
+    margin-bottom: 5%;
+}
+
+article h2 {
+    font-size: 3.0rem;
+}
+
+article h3 {
+    font-size: 2.0rem;
+    padding-bottom: 3%;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 4.0rem;
+    font-family: "Grechen Fuemen", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.top-news {
+    margin: 3%;
+    font-size: 5.0rem
+}
