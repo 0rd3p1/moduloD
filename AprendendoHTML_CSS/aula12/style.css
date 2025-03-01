@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Sigmar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --cor-header: darkslategray;
@@ -8,6 +9,7 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 header {
@@ -18,7 +20,7 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 5%;
+    padding-right: 10%;
 }
 
 header a {
@@ -47,11 +49,82 @@ body section {
     flex-direction: column;
 }
 
-body h1 {
+body article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body section h1 {
     font-family: "Sigmar", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 3.5rem;
-    padding-top: 5%;
+    padding-top: 20px;
     padding-bottom: 20px;
+}
+
+body article h2 {
+    font-family: "Sigmar", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    padding-top: 20px;
+}
+
+body article p {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 2rem;
+    padding-left: 6%;
+    padding-right: 6%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+body article div li {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 2rem;
+    padding-left: 6%;
+    padding-right: 6%;
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+
+body article div {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+body article {
+    margin-bottom: 50px;
+}
+
+footer {
+    background-color: var(--cor-header);
+}
+
+footer nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer p {
+    color: aliceblue;
+    font-family: "Sigmar", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    padding-left: 5%;
+    padding-right: 5%;
 }
