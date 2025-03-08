@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+
+.titulo {
+    text-align: center;
+    
+}
+
+.subtitulo {
+    text-align: center;
+}
+
+.header {
+    margin: 20px;
+}
+
+fieldset {
+    border: 0;
+}
+
+.pessoal {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pessoal input {
+    margin: 10px;
+}
+
+#senha {
+    width: 54%;
+}
+
+input, label, textarea, buttom {
+    border-radius: 5px;
+}
+
+.radio {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.radio input {
+    margin: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select, text {
+    padding: 5px;
+    border: 2px solid gray;
+    box-shadow: 2px 2px 2px black;
+}
+
+.select {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.select select {
+    margin: 20px;
+}
+
+.check {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.check input {
+    margin: 10px;
+}
+
+.area {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.area textarea {
+    width: 70%;
+}
+
+.button {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.button button {
+    width: 20%;
+    height: 40px;
+    font-size: 1.2em;
+    color: white;
+    background-color: gray;
+    text-shadow: 1px 1px 1px black;
+}
+
+.button button:hover {
+    background-color: black;
+}
