@@ -98,3 +98,16 @@ input[type="text"], input[type="email"], input[type="password"], select, text {
 .button button:hover {
     background-color: black;
 }
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+/*
+Médios: Telas entre 481px e 767px.
+
+Retrato (Portrait): Telas entre 768px e 1024px.
+
+Telas Pequenas: Telas entre 1281px e 1366px.
+
+Telas Médias: Telas entre 1367px e 1440px.
+*/
+}
