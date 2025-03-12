@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap');
+
+/*Declaracao de variavel no CSS*/
+:root {
+    --cor-cinza-fundo: dimgray;
+    --cor-preto-fundo: black;
+}
+
+/*
+'width' = largura
+'height' = altura
+*/
+
+* {
+    color: whitesmoke;
+    font-family: "JetBrains Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    background-color: var(--cor-preto-fundo);
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+header div {
+    display: flex;
+    font-size: 2.0rem;
+    padding: 10px;
+    align-items: end;
+    gap: 50px;
+}
+
+body {
+    background-color: var(--cor-cinza-fundo);
+}
+
+footer {
+    display: flex;
+    background-color: var(--cor-preto-fundo);
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 5%;
+
+}
+
+section {
+    margin: 3%;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px;
+}
+
+article p {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+article img {
+    width: 45rem;
+    margin: 20px;
+}
+
+article h2 {
+    font-size: 3.0rem;
+}
+
+article h3 {
+    font-size: 2.0rem;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 4.0rem;
+    font-family: "Grechen Fuemen", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about p {
+    font-size: 2.5rem;
+}
+
+.about h1 {
+    font-size: 6.0rem;
+    margin: 3%;
+}
+
+.top-news {
+    margin: 3%;
+    font-size: 5.0rem
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--cor-preto-fundo);
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        
+    }
+    
+    header div {
+        display: flex;
+        font-size: 1.5rem;
+        padding: 10px;
+        align-items: center;
+        gap: 50px;
+    }
+    
+    body {
+        background-color: var(--cor-cinza-fundo);
+    }
+    
+    footer {
+        display: flex;
+        background-color: var(--cor-preto-fundo);
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        margin-top: 5%;
+    }
+    
+    section {
+        margin: 5%;
+    }
+    
+    article {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0px;
+    }
+    
+    article p {
+        font-size: 1.5rem;
+        text-align: justify;
+        text-align: center;
+    }
+    
+    article img {
+        width: 25rem;
+        margin: 10px;
+    }
+    
+    article h2 {
+        margin-top: 7%;
+        font-size: 2.7rem;
+    }
+    
+    article h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        font-family: "Grechen Fuemen", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    h4 {
+        font-size: 9px;
+    }
+    
+    .about {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .about p {
+        font-size: 1.5rem;
+        margin: 3%;
+    }
+    
+    .about h1 {
+        font-size: 4.7rem;
+        margin: 3%;
+    }
+    
+    .top-news {
+        margin: 7%;
+        font-size: 4.7rem
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+@media (min-width: 1281px) and (max-width: 1366px) {
+}
