@@ -1,0 +1,230 @@
+.hoverTransition{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    text-align: center;
+    
+    transition: background-color 2s, border 5s;
+
+}
+
+.hoverTransition:hover{
+    background-color: aliceblue;
+    border: 10px solid black;
+}
+
+.hoverSize{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    text-align: center;
+
+    transition: transform 2s;
+}
+
+.hoverSize:hover{
+    transform: scale(2);
+}
+
+.hoverRotate{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    text-align: center;
+
+    transition: transform 0.5s;
+}
+
+.hoverRotate:hover{
+    transform: rotateZ(360deg);
+}
+
+.transitionDelay{
+
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    text-align: center;
+
+    transition: width 1s 2s, height 1s 1s;
+    
+}
+
+.transitionDelay:hover{
+
+    width: 200px;
+    height: 200px;
+}
+
+.transitionText{
+    width: 50%;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+
+    transition: transform 1s;
+}
+
+.transitionText:focus{
+    transform: rotateZ(10deg);
+}
+
+.animationFadeIn{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    text-align: center;
+
+    animation: fadeIn 5s linear infinite;
+}
+
+@keyframes fadeIn{
+    from{opacity: 0;}
+    to {opacity: 1;}
+}
+
+.animationFadeOut{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    animation: fadeIn 5s linear infinite;
+    animation-direction: reverse;
+}
+
+.animationFadeInOut{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    animation: fadeInOut 5s linear infinite;
+  
+}
+
+@keyframes fadeInOut{
+    0% {opacity: 1;}
+    50% {opacity: 0.2;}
+    100% {opacity: 1;}
+}
+
+.animationRotate{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    text-align: center;
+    border-radius: 50%;
+
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate{
+    from{transform: rotateZ(360deg);}
+    to {transform: rotateZ(0deg);}
+}
+
+.animationRotateEase{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    text-align: center;
+    border-radius: 50%;
+
+    animation: rotate 1s ease infinite;
+}
+
+.animationRotateEaseOut{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    text-align: center;
+    border-radius: 50%;
+
+    animation: rotate 1s ease-out infinite;
+}
+
+.positionBox{
+    width: 100%;
+    height: 300px;
+    background-color: aqua;
+    position: relative;
+}
+
+.animationPosition{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    text-align: center;
+
+    animation: position 4s linear infinite;
+
+}
+
+@keyframes position{
+
+    0%{
+        top: 0;
+        left: 0;
+    }
+
+
+    35%{
+        top: 0;
+        left: calc(100% - 100px);
+    }
+
+    50%{
+        top: calc(100% - 100px);
+        left: calc(100% - 100px);
+    }
+
+    85%{
+        top: calc(100% - 100px);
+        left: 0;
+    }
+   100%{
+        top: 0;
+        left: 0;
+    }
+
+
+}
+
+.animationPosition2{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    text-align: center;
+
+    animation: position2 4s ease infinite;
+
+}
+
+@keyframes position2{
+
+    0%{
+    
+        left: 0;
+    }
+
+
+    35%{
+
+        left: calc(100% - 100px);
+    }
+
+    50%{
+
+        left: calc(100% - 100px);
+    }
+
+    85%{
+
+        left: 0;
+    }
+   100%{
+
+        left: 0;
+    }
+
+
+}
