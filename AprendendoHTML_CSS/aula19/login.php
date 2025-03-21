@@ -9,13 +9,24 @@
     <title>Login</title>
 </head>
 
-<body>
-    <form action="script.php" method="POST">
-        <label for="email">Email</label>
-        <input type="email" name="email">
-        <label for="pswd">Senha</label>
-        <input type="password" name="pswd">
-        <button class="border-2 border-solid" type="submit" name="logar">Entrar</button>
+<body class="bg-stone-300">
+    <form action="actions.php" method="POST">
+        <div class="justify-items-center">
+            <div class="flex flex-col place-items-center bg-stone-400 w-100 mt-70 rounded-xl shadow-xl">
+                <div class="flex flex-col m-7">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="border-1 border-solid rounded-md w-60">
+                </div>
+
+                <div class="flex flex-col m-7">
+                    <label for="pswd">Senha</label>
+                    <input type="password" name="pswd" class="border-1 border-solid rounded-md w-60">
+                </div>
+
+                <button class="bg-sky-600 hover:bg-sky-700 rounded-md mt-7 w-40" type="submit" name="login">Entrar</button>
+                <button class="bg-slate-500 hover:bg-slate-600 rounded-md m-7 w-40" type="submit" name="register">Cadastrar</button>
+            </div>
+        </div>
     </form>
 </body>
 
