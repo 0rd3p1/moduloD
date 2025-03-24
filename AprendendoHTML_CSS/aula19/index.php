@@ -1,4 +1,4 @@
-<?php include 'header.php' ?>
+<?php include 'head.php' ?>
 
 <header class="p-5 shadow-lg">
     <nav class="flex place-content-around place-items-center text-2xl font-extrabold flex-wrap overflow-cover">
