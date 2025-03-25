@@ -1,4 +1,4 @@
-<footer class="flex flex-col place-items-center bg-stone-400">
+<footer class="flex flex-col place-items-center">
     <p class="mt-5">
         ® 2025 Globolixo
     </p>

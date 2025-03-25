@@ -1,6 +1,7 @@
-<?php 
+<?php
 
 include 'head.php';
+include 'protect.php';
 
 if (!isset($_SESSION)) {
     session_start();
@@ -8,7 +9,10 @@ if (!isset($_SESSION)) {
 
 ?>
 
-<form action="actions.php" method="POST">
+<form action="../actions.php" method="POST">
+
+    <input type="text" hidden name="id" value="<?= $_GET['id']; ?>">
+
     <div class="flex place-items-center flex-col mb-80">
         <div class="flex flex-col place-items-center bg-stone-300 w-100 mt-60 rounded-xl shadow-xl">
             <div class="flex flex-col m-7">
@@ -48,14 +52,11 @@ if (!isset($_SESSION)) {
             ?>
 
             <div class="flex place-items-center m-7">
-                <button class="bg-slate-500 hover:bg-slate-600 rounded-md w-40" type="submit" name="register">Cadastrar</button>
+                <button class="bg-slate-500 hover:bg-slate-600 rounded-md w-40" type="submit" name="update">Editar</button>
             </div>
         </div>
-        
-        <div class="flex flex-row">
-            <a href="index.php" class="text-extrabold mt-10 mr-15">Voltar</a>
-            <a href="logout.php" class="text-extrabold mt-10 ml-15">Sair</a>
-        </div>
+
+        <a href="login.php" class="text-extrabold mt-10"><- Voltar</a>
     </div>
 </form>
 
