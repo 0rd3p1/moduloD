@@ -11,7 +11,6 @@
 <body class="bg-stone-400">
     <div class="flex flex-col place-items-center mt-20">
         <h1 class="text-5xl p-15">Manuteção em andamento</h1>
-        <img src="globolixo.jpg" class="h-100">
         <a href="index.html" class="text-2xl shadow-lg rounded-xl p-2 bg-slate-400 hover:bg-slate-500 m-20">Voltar</a>
     </div>  
 </body>
