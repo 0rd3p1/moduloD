@@ -30,12 +30,12 @@ $users = $query->fetchAll();
 ?>
 
 <div class="flex place-items-center flex-col">
-    <table class="bg-stone-300 rounded-xl m-70">
+    <table class="bg-stone-700 rounded-xl m-70 text-stone-400 font-bold">
         <thead>
             <tr>
                 <th class="pr-5 pl-5 pt-2 pb-2">ID</th>
                 <th class="pr-5 pl-5 pt-2 pb-2">Nome</th>
-                <th class="pr-5 pl-5 pt-2 pb-2 bg-stone-300">Email</th>
+                <th class="pr-5 pl-5 pt-2 pb-2">Email</th>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +47,40 @@ $users = $query->fetchAll();
                     <td class="pr-5 pl-5 pt-2 pb-2 flex">
                         <a href="update.php/?id=<?= $user['id']; ?>" class="pr-2 text-yellow-600">Editar</a>
                         <a href="del.php/?id=<?= $user['id']; ?>&name=<?= $user['name']; ?>" class="pl-2 text-red-500">Excluir</a>
+                    </td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div>
+
+<?php
+
+$query = db()->prepare('SELECT * FROM books');
+$query->execute();
+
+$books = $query->fetchAll();
+
+?>
+
+<div class="flex place-items-center flex-col">
+    <table class="bg-stone-700 rounded-xl m-70 text-stone-400 font-bold">
+        <thead>
+            <tr>
+                <th class="pr-5 pl-5 pt-2 pb-2">ID</th>
+                <th class="pr-5 pl-5 pt-2 pb-2">Titulo</th>
+                <th class="pr-5 pl-5 pt-2 pb-2">Autor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($books as $book) { ?>
+                <tr>
+                    <td class="pr-5 pl-5 pt-2 pb-2 border-md border-solid bg-stone-300"><?= $book['id']; ?></td>
+                    <td class="pr-5 pl-5 pt-2 pb-2"><?= $book['title']; ?></td>
+                    <td class="pr-5 pl-5 pt-2 pb-2"> <?= $book['author']; ?></td>
+                    <td class="pr-5 pl-5 pt-2 pb-2 flex">
+                        <a href="updateBook.php/?id=<?= $book['id']; ?>" class="pr-2 text-yellow-600">Editar</a>
+                        <a href="delBook.php/?id=<?= $book['id']; ?>&name=<?= $book['title']; ?>" class="pl-2 text-red-500">Excluir</a>
                     </td>
                 </tr>
             <?php } ?>

@@ -16,20 +16,30 @@ if (isset($_POST['login'])) {
         header('Location: login.php');
         exit();
     } else {
-        $query = db()->prepare("SELECT * FROM users WHERE email = :email AND pswd = :pswd");
-        $query->execute([
-            'email' => $_POST['email'],
-            'pswd' => $_POST['pswd']
+        $query = db()->prepare("SELECT * FROM users WHERE email = :email");
+        $user = $query->execute([
+            'email' => $_POST['email']
         ]);
 
         // Este 'if' esta verificando a saida do array e se houver saida adiciona na variavel '$user'
-        if ($user = $query->fetch()) {
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['name'] = $user['name'];
-            $_SESSION['email'] = $user['email'];
-            header('Location: panel.php');
+        if ($users = $query->fetch()) {
+            if (password_verify($_POST['pswd'], $user['pswd'])) {
+                $_SESSION['id'] = $user['id'];
+                $_SESSION['name'] = $user['name'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['idAdm'] = $user['idAdm'];
+
+                if ($user['idAdm'] == 1) {
+                    header('Location: panelAdm.php');
+                } else {
+                    header('Location: panelUser.php');
+                }
+            } else {
+                $_SESSION['errorPswd'] = 'Senha incorreta!';
+                header('Location: login.php');
+            }
         } else {
-            $_SESSION['error'] = 'Email ou senha invalidos!';
+            $_SESSION['errorEmail'] = 'Email incorreto!';
             header('Location: login.php');
         }
     }
@@ -49,18 +59,33 @@ if (isset($_POST['register'])) {
         header('Location: register.php');
         exit();
     } else {
-        $name = ($_POST['name']);
-        $email = ($_POST['email']);
-        $pswd = ($_POST['pswd']);
+        $hash = password_hash($_POST['pswd'], PASSWORD_DEFAULT);
 
-        $query = db()->prepare("INSERT INTO users (name, email, pswd) VALUES (:name, :email, :pswd)");
-        $user = $query->execute([
-            'name' => $name,
-            'email' => $email,
-            'pswd' => $pswd
+        if ($_POST['email'] == 'pedro@pedro') {
+            $idAdm = 1;
+        } else {
+            $idAdm = 0;
+        }
+
+        $query = db()->prepare("SELECT * FROM users WHERE email = :email");
+        $query->execute([
+            'email' => $_POST['email']
         ]);
 
-        header('Location: login.php');
+        if (!$query->fetch()) {
+            $query = db()->prepare("INSERT INTO users (name, email, pswd, idAdm) VALUES (:name, :email, :hash, :idAdm)");
+            $user = $query->execute([
+                'name' => $_POST['name'],
+                'email' => $_POST['email'],
+                'pswd' => $hash,
+                'idAdm' => $idAdm
+            ]);
+
+            header('Location: login.php');
+        } else {
+            $_SESSION['errorEmail'] = 'Email ja cadastrado!';
+            header('Location: register.php');
+        }
     }
 }
 
@@ -78,20 +103,27 @@ if (isset($_POST['update'])) {
         header('Location: panel.php');
         exit();
     } else {
-        $id = ($_POST['id']);
-        $name = ($_POST['name']);
-        $email = ($_POST['email']);
-        $pswd = ($_POST['pswd']);
-
-        $query = db()->prepare("UPDATE users SET name = :name, email = :email, pswd = :pswd WHERE id = :id");
-        $user = $query->execute([
-            'id' => $id,
-            'name' => $name,
-            'email' => $email,
-            'pswd' => $pswd
+        $query = db()->prepare("SELECT * FROM users WHERE email = :email");
+        $query->execute([
+            'email' => $_POST['email']
         ]);
 
-        header('Location: panel.php');
+        if (!$query->fetch()) {
+            $hash = password_hash($_POST['pswd'], PASSWORD_DEFAULT);
+
+            $query = db()->prepare("UPDATE users SET name = :name, email = :email, pswd = :pswd, idAdm = :idAdm WHERE id = :id");
+            $user = $query->execute([
+                'id' => $_POST['id'],
+                'name' => $_POST['name'],
+                'email' => $_POST['email'],
+                'pswd' => $hash,
+                'idAdm' => $_POST['idAdm']
+            ]);
+
+            header('Location: panelAdm.php');
+        } else {
+            $_SESSION['errorEmail'] = 'Email ja cadastrado!';
+        }
     }
 }
 
@@ -101,15 +133,14 @@ if (isset($_POST['del'])) {
         'id' => $_GET['id']
     ]);
 
-    header('Location: panel.php');
+    header('Location: panelAdm.php');
 }
 
 if (isset($_POST['logout'])) {
-    echo "oi";
     session_destroy();
     header('Location: index.php');
 }
 
 if (isset($_POST['null'])) {
-    header('Location: panel.php');
+    header('Location: index.php');
 }

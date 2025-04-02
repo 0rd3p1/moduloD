@@ -8,4 +8,4 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="bg-stone-600">

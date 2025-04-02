@@ -51,6 +51,11 @@ if (!isset($_SESSION)) {
             }
             ?>
 
+            <div class="flex flex-col m-7">
+                <label for="idAdm">Adm = 1 || User = 0</label>
+                <input type="text" name="idAdm" class="rounded-md w-60 bg-white">
+            </div>
+
             <div class="flex place-items-center m-7">
                 <button class="bg-slate-500 hover:bg-slate-600 rounded-md w-40" type="submit" name="update">Editar</button>
             </div>

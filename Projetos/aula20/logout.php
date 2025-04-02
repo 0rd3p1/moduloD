@@ -9,8 +9,8 @@ if (!isset($_SESSION)) {
     
 if (isset($_SESSION['id'])) { ?>
     <form action="actions.php" method="POST">
-        <div class="flex place-items-center flex-col mb-80">
-            <div class="flex flex-col place-items-center bg-stone-300 w-100 mt-85 rounded-xl shadow-xl">
+        <div class="flex place-items-center flex-col mb-80 text-stone-400 font-bold">
+            <div class="flex flex-col place-items-center bg-stone-700 w-100 mt-85 rounded-xl shadow-xl">
                 <p class="text-xl m-7 text-center">
                     Voce deseja mesmo sair da sua conta?
                 </p>
