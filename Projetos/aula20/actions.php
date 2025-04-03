@@ -199,7 +199,7 @@ if (isset($_POST['updateBook'])) {
 
         if (!in_array($extesion, $allowed_extensions)) {
             $_SESSION['errorImg'] = '.png, .jpg, .jpeg apenas!';
-            header('Location: add.php');
+            header('Location: panelUser.php');
             exit();
         }
 
@@ -261,7 +261,7 @@ if (isset($_POST['add'])) {
             'idUser' => $_SESSION['id']
         ]);
 
-        header('Location: panelUser.php');
+        header('Location: index.php');
     }
 }
 
@@ -269,7 +269,7 @@ if (isset($_POST['add'])) {
 if (isset($_POST['delUser'])) {
     $query = db()->prepare("DELETE FROM users WHERE id = :id");
     $query->execute([
-        'id' => $_GET['id']
+        'id' => $_POST['id']
     ]);
 
     header('Location: panelAdm.php');
@@ -279,10 +279,10 @@ if (isset($_POST['delUser'])) {
 if (isset($_POST['delBook'])) {
     $query = db()->prepare("DELETE FROM books WHERE id = :id");
     $query->execute([
-        'id' => $_GET['id']
+        'id' => $_POST['id']
     ]);
 
-    header('Location: panelUser.php');
+    header('Location: index.php');
 }
 
 // Sair da conta do usuario

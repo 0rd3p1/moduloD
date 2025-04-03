@@ -49,7 +49,7 @@ $users = $query->fetchAll();
                         <td class="pr-5 pl-5 pt-2 pb-2"><?= $user['name']; ?></td>
                         <td class="pr-5 pl-5 pt-2 pb-2"> <?= $user['email']; ?></td>
                         <td class="pr-5 pl-5 pt-2 pb-2 flex">
-                            <a href="updateUser.php/?id=<?= $user['id']; ?>" class="pr-2 text-yellow-600">Editar</a>
+                            <a href="updateAdm.php/?id=<?= $user['id']; ?>" class="pr-2 text-yellow-600">Editar</a>
                             <a href="delUser.php/?id=<?= $user['id']; ?>" class="pl-2 text-red-500">Excluir</a>
                         </td>
                     </tr>

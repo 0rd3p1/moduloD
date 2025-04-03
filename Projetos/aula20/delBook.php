@@ -20,7 +20,7 @@ if (!isset($_SESSION)) {
             </p>
 
             <div class="flex place-items-center m-7">
-                <button class="bg-green-400 hover:bg-green-500 rounded-md w-30 mr-3 text-black" type="submit" name="delUser">Sim</button>
+                <button class="bg-green-400 hover:bg-green-500 rounded-md w-30 mr-3 text-black" type="submit" name="delBook">Sim</button>
                 <button class="bg-red-400 hover:bg-red-500 rounded-md w-30 ml-3 text-black" type="submit" name="null">Não</button>
             </div>
         </div>

@@ -9,7 +9,7 @@ if (!isset($_SESSION)) {
 
 ?>
 
-<form action="actions.php" method="POST">
+<form action="../actions.php" method="POST">
 
     <input type="text" hidden name="id" value="<?= $_GET['id']; ?>">
 
