@@ -1,4 +1,4 @@
-<footer class="flex flex-col place-items-center bg-stone-700 font-bold">
+<footer class="flex flex-col place-items-center font-bold">
     <p class="mt-5 text-stone-400">
         ® 2025 Catatau's Site
     </p>
