@@ -21,10 +21,10 @@
     <form action="/registrar" method="POST" class="p-4 space-y-4">
 
     <?php 
-        if(strlen($mensagem) > 0):
+        if(isset($_SESSION['mensagem'])):
     ?>
     <div class="border-green-800 bg-green-900 text-green-400 px-4 py-1 rounded-md border-2">
-            <?= $mensagem ?>
+            <?= $_SESSION['mensagem'] ?>
     </div>
     
     <?php endif; ?>

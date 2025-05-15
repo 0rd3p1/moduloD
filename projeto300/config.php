@@ -1,6 +1,5 @@
 <?php
 
-
 return [
     'database' => [
         'driver' => 'sqlite',

@@ -27,6 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     );
 
 
-    header('Location: /login?mensagem=Registrado com sucesso!');
+    $_SESSION['mensagem'] = "Usuario cadastrado com sucesso!";
+
+    header('Location: /login');
     exit();
 }
